@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ECHOnode</title>
+    <!-- <link rel="icon" href="icons/favicon.ico" sizes="16x16 32x32 48x48 64x64" type="image/vnd.microsoft.icon"> -->
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="echoNode is a all-in-one audio server.">
+    
+    <link rel="stylesheet" href="css/photon.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
+
+</head>
+<body>
+    <div class="window" id="window">
+        <header class="toolbar toolbar-header">
+            <div class="toolbar-container padded-less">
+                <div class="toolbar-actions">
+                    <div class="btn-group">
+                        <button class="btn btn-default library-control" id="playButtonTitle" title="Play Game" data-action="play" data-path="">
+                            <span class="icon icon-play"></span>
+                        </button>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <span class="icon icon-search input-group-addon"></span>
+                    <input type="text" class="form-control" id="searchInput" placeholder="Search">
+                </div>
+                <div>
+                    <button class="btn btn-default " id="userButton" title="User Settings">
+                        <span class="icon icon-user"></span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <div class="window-content">
+            <div class="pane-group">
+
+                <!-- Sidebar Navigation -->
+                <div class="pane-sm sidebar">
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title" id="navGroupTitle">Library</h5>
+
+                        <!-- All ROMs -->
+                        <div class="nav-group-item" id="allMusicNav" content-id="AllLibraryMusic">
+                            <span class="icon icon-folder"></span>
+                            All Music
+                        </div>
+
+                        <!-- Favorites -->
+                        <div class="nav-group-item" id="favoritesNav" content-id="LibraryFavoritesList">
+                            <span class="icon icon-star"></span>
+                            Favorites
+                        </div>
+
+                        <div class="nav-group-item" id="byAlbumNav" content-id="AlbumList">
+                            <span class="icon icon-list"></span>
+                            By Album
+                        </div>
+                        <div class="nav-group-item" id="byArtistNav" content-id="ArtistList">
+                            <span class="icon icon-user"></span>
+                            By Artist
+                        </div>
+                        <div class="nav-group-item" id="byGenreNav" content-id="GenreList">
+                            <span class="icon icon-layout"></span>
+                            By Genre
+                        </div>
+                    </nav>
+                    <nav class="nav-group">
+                        <h5 class="nav-group-title" id="navGroupTitle2" >Online Music</h5>
+
+                        <div class="nav-group-item" id="spotifyNav" content-id="SpotifyMain">
+                            <span class="icon icon-spotify"></span>
+                            Spotify
+                        </div>
+                    </nav>
+                </div>
+
+                <!-- Main Pane-->
+                <div class="pane">
+                    <div class="padded-less" id="content">
+                        <div class="loading">
+                            <div class="loading-spinner"></div>
+                        </div>
+                        <div class="welcome centered">
+                            <h1>Welcome to ECHOnode</h1>
+                            <p>Click on a library item to get started.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="toolbar toolbar-footer footer" id="footer">
+        </footer>
+    </div>
+    <script src="js/index.js"></script>
+   
+</body>
+</html>

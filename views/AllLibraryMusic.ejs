@@ -1,0 +1,112 @@
+<style>
+    #admin-panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+        padding: 5px;
+        text-align: center;
+    }
+
+    #services {
+        display: flex;
+        flex-direction: row;
+        margin: 10px;
+        padding: 5px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #services span.icon {
+        font-size: 4em;
+        background-color: darkgrey;
+    }
+
+    #services span.bi {
+        font-size: 4em;
+        background-color: #2f2f2f;
+        height: 100%;
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        margin-bottom: 10px;
+    }
+
+    #services span.bi.active {
+        box-shadow: none; /* Remove the shadow when active */
+        background-color: #1f1f1f; /* Change background color when active */
+        transform: translateY(2px); /* Keep the pushed-in effect */
+    }
+
+    #services span.bi:hover {
+        box-shadow: none;
+        transform: translateY(2px); /* Push the icon down a bit */
+        background-color: #1f1f1f;
+    }
+
+    .online {
+        color: #28a745;
+    }
+
+    .offline {
+        color: #e20202;
+    }
+
+    .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 20px;
+        text-align: center;
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .service-item .icon {
+        font-size: 2em; /* Adjust the size of the icon as needed */
+        margin-bottom: 10px; /* Space between the icon and the label */
+    }
+
+</style>
+<div id="admin-panel">
+    <label for="services">Services</label>
+    <div id="services" class="services-grid">
+        <div class="service-item" id="librespot">
+            <span id="librespot-status" class="bi bi-spotify offline"></span>
+            <label for="librespot-status">Librespot (Spotify Connect)</label>
+            <div class="menu hidden" id="librespot-menu">
+                <button id="librespot-start" class="btn btn-default">Start</button>
+                <button id="librespot-stop" class="btn btn-default">Stop</button>
+                <button id="librespot-restart" class="btn btn-default">Restart</button>
+            </div>
+        </div>
+        <div class="service-item" id="shairplay">
+            <span id="shairplay-status" class="bi bi-cast offline"></span>
+            <label for="shairplay-status">Shairplay (Airplay)</label>
+            <div class="menu hidden" id="shairplay-menu">
+                <button id="shairplay-start" class="btn btn-default">Start</button>
+                <button id="shairplay-stop" class="btn btn-default">Stop</button>
+                <button id="shairplay-restart" class="btn btn-default">Restart</button>
+            </div>
+        </div>
+        <div class="service-item" id="bluetooth">
+            <span id="bluetooth-status" class="bi bi-bluetooth offline"></span>
+            <label for="bluetooth-status">Bluetooth Audio Receiver</label>
+            <div class="menu hidden" id="bluetooth-menu">
+                <button id="bluetooth-start" class="btn btn-default">Start</button>
+                <button id="bluetooth-stop" class="btn btn-default">Stop</button>
+                <button id="bluetooth-restart" class="btn btn-default">Restart</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="js/admin_panel.js"></script>
